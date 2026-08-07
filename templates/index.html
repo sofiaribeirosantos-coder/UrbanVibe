@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>UrbanVibe - Loja</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body class="theme-light">
+  <header class="site-header">
+    <div class="brand">UrbanVibe</div>
+    <nav>
+      <button id="themeToggle">Modo Escuro</button>
+      <button id="helpBtn">Ajuda</button>
+      <button id="cartBtn">Carrinho (<span id="cartCount">0</span>)</button>
+    </nav>
+  </header>
+
+  <main class="content">
+    <aside class="filters">
+      <h3>Filtros</h3>
+      <label>Gênero</label>
+      <select id="filterGender">
+        <option value="">Todos</option>
+        <option value="masculino">Masculino</option>
+        <option value="feminino">Feminino</option>
+        <option value="unissex">Unissex</option>
+      </select>
+
+      <label>Estilo</label>
+      <select id="filterStyle">
+        <option value="">Todos</option>
+        <option value="casual">Casual</option>
+        <option value="street">Street</option>
+        <option value="urbano">Urbano</option>
+        <option value="athleisure">Athleisure</option>
+      </select>
+      <button id="clearFilters">Limpar</button>
+    </aside>
+
+    <section class="products">
+      <h2>Produtos</h2>
+      <div id="productGrid" class="grid"></div>
+    </section>
+  </main>
+
+  <!-- Carrinho lateral -->
+  <div id="cartPanel" class="panel hidden">
+    <h3>Carrinho</h3>
+    <div id="cartItems"></div>
+    <div class="cart-total">Total: <span id="cartTotal">R$ 0,00</span></div>
+    <button id="checkoutBtn">Finalizar Compra</button>
+    <button id="closeCart">Fechar</button>
+  </div>
+
+  <!-- Modal checkout -->
+  <div id="checkoutModal" class="modal hidden">
+    <div class="modal-content">
+      <h3>Checkout</h3>
+      <form id="checkoutForm">
+        <label>Nome completo</label>
+        <input name="name" required />
+        <label>E-mail</label>
+        <input name="email" type="email" />
+        <label>CPF/CNPJ</label>
+        <input name="cpf_cnpj" />
+        <label>Endereço</label>
+        <input name="address" />
+        <p>Pagamento: (simulado) insira dados fictícios</p>
+        <label>Cartão</label>
+        <input name="card" placeholder="0000 0000 0000 0000" />
+        <button type="submit">Pagar e Emitir Nota</button>
+        <button type="button" id="cancelCheckout">Cancelar</button>
+      </form>
+      <div id="checkoutResult"></div>
+    </div>
+  </div>
+
+  <!-- Ajuda -->
+  <div id="helpPanel" class="panel hidden">
+    <h3>Ajuda e Autoatendimento</h3>
+    <div class="faq">
+      <h4>FAQ</h4>
+      <ul>
+        <li><b>Como rastrear meu pedido?</b> Após a confirmação você recebe um e-mail com código de rastreio.</li>
+        <li><b>Como solicitar troca?</b> Use o formulário de contato, informe número da nota e motivo.</li>
+        <li><b>Emissão de Nota Fiscal</b> — Emitimos nota em PDF automaticamente após pagamento (para NF-e oficial, integre com provedor fiscal).</li>
+      </ul>
+    </div>
+    <div class="chat">
+      <h4>Chat de Autoatendimento</h4>
+      <div id="chatLog" class="chat-log"></div>
+      <input id="chatInput" placeholder="Pergunte algo (ex.: política de trocas)"/>
+      <button id="sendChat">Enviar</button>
+    </div>
+    <button id="closeHelp">Fechar</button>
+  </div>
+
+  <footer class="site-footer">
+    <span>UrbanVibe © 2026</span>
+  </footer>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
