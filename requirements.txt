@@ -5,3 +5,6 @@ flask-cors==3.0.10
 psycopg2-binary==2.9.7
 SQLAlchemy==1.4.49
 python-dotenv==1.0.0
+setuptools
+gunicorn
+flask  # ou qualquer outro framework que você use
